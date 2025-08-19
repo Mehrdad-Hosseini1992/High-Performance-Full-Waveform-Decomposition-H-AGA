@@ -124,7 +124,5 @@ This is a common, harmless warning in scientific Python environments where multi
 
 This project builds upon the scientific foundation laid by the **H-AGA research paper** and leverages the power of several open-source libraries. The custom GPU-accelerated optimizers were inspired by the following projects:
 
-* **Adaptive Genetic Algorithm**: The initial CPU-based implementation used gadapt, which highlighted the need for a GPU-native solution.  
-
-* **PyTorch Levenberg-Marquardt**: The final fitting stage is powered by the excellent torch-levenberg-marquardt library.
-https://github.com/fabiodimarco/torch-levenberg-marquardt
+* **Adaptive Genetic Algorithm**: The initial CPU-based implementation used gadapt, which highlighted the need for a GPU-native solution.( https://github.com/bpzoran/gadapt )
+* **PyTorch Levenberg-Marquardt**: The final fitting stage is powered by the excellent torch-levenberg-marquardt library. ( https://github.com/fabiodimarco/torch-levenberg-marquardt )
