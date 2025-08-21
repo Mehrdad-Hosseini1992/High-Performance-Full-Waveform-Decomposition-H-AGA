@@ -1,7 +1,5 @@
-# Utils/preprocessor.py
-# --- (DEFINITIVE FINAL VERSION) ---
-# The `run` method now returns the calculated baseline array, which is essential
-# for correctly repositioning the final fitted curve.
+
+# The `run` method now returns the calculated baseline array, which is essential for correctly repositioning the final fitted curve.
 
 import numpy as np
 import pywt
@@ -56,10 +54,10 @@ class Preprocessor:
         y_despike = self.adaptive_median_filter(y_data)
         y_denoised = self.wavelet_denoise(y_despike)
         
-        # --- MODIFICATION: Store the baseline to return it ---
+
         original_baseline = self.estimate_baseline(y_denoised)
         y_corrected = y_denoised - original_baseline
-        # --------------------------------------------------
+
         
         is_inverted = abs(np.min(y_corrected)) > abs(np.max(y_corrected))
         if is_inverted:
@@ -71,4 +69,5 @@ class Preprocessor:
         
         print(f"  - Preprocessing complete. Noise threshold set to: {threshold:.4f}")
         # Return the calculated baseline along with other results
+
         return y_corrected, threshold, is_inverted, original_baseline
