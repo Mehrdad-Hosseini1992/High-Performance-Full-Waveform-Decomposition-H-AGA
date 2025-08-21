@@ -3,8 +3,6 @@
 This repository contains a high-performance, GPU-accelerated Python tool for decomposing complex, full-waveform signals into their constituent generalized Gaussian components. 
 The primary scientific goal is to accurately detect and parameterize hidden or overlapping peaks within noisy, real-world oscilloscope data, achieving a goodness-of-fit (R2) that meets or exceeds the benchmarks set by the original research.
 
-*Example of a successful waveform decomposition with an* R2 *of 0.968.*
-
 ## **Table of Contents**
 
 1. [Key Features & Innovations](https://www.google.com/search?q=%231-key-features--innovations)  
@@ -113,15 +111,8 @@ HAGA-2-Claud/
 * **Utils/**: Provides specialized helper classes for data loading, preprocessing, and plotting.  
 * **main.py**: The entry point that handles file discovery and parallel processing.
 
-## **6\. A Note on the OMP Warning**
-
-When running the script, you may see the following warning:  
-OMP: Error \#15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized.  
-This is a common, harmless warning in scientific Python environments where multiple libraries (e.g., NumPy and PyTorch) are linked against Intel's OpenMP library. The main.py script already includes a standard workaround to suppress this warning and allow the program to run correctly. **It does not affect the scientific validity of the results.**
-
 ## **7\. Acknowledgments**
-
-This project builds upon the scientific foundation laid by the **H-AGA research paper** and leverages the power of several open-source libraries. The custom GPU-accelerated optimizers were inspired by the following projects:
+The custom GPU-accelerated optimizers were inspired by the following projects:
 
 * **Adaptive Genetic Algorithm**: The initial CPU-based implementation used gadapt, which highlighted the need for a GPU-native solution.( https://github.com/bpzoran/gadapt )
 * **PyTorch Levenberg-Marquardt**: The final fitting stage is powered by the excellent torch-levenberg-marquardt library. ( https://github.com/fabiodimarco/torch-levenberg-marquardt )
