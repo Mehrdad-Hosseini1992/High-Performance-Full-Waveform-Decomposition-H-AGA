@@ -1,7 +1,6 @@
 # **High-Performance Waveform Decomposition (H-AGA)**
 
-This repository contains a high-performance, GPU-accelerated Python tool for decomposing complex, full-waveform signals into their constituent generalized Gaussian components. The model is a direct implementation and significant performance enhancement of the methodology described in the research paper: **"A Satellite Full-Waveform Laser Decomposition Method for Forested Areas Based on Hidden Peak Detection and Adaptive Genetic Optimization" (H-AGA)**.
-
+This repository contains a high-performance, GPU-accelerated Python tool for decomposing complex, full-waveform signals into their constituent generalized Gaussian components. 
 The primary scientific goal is to accurately detect and parameterize hidden or overlapping peaks within noisy, real-world oscilloscope data, achieving a goodness-of-fit (R2) that meets or exceeds the benchmarks set by the original research.
 
 *Example of a successful waveform decomposition with an* R2 *of 0.968.*
