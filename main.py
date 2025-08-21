@@ -1,8 +1,4 @@
-# main.py
-# --- (OPTIMIZED) ---
-# Added a command-line argument '--n_sigma' to allow for easy tuning
-# of the noise threshold sensitivity.
-# PARALLEL GPU-OPTIMIZED VERSION
+# Added a command-line argument '--n_sigma' to allow for easy tuning of the noise threshold sensitivity.
 
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
@@ -89,8 +85,6 @@ def process_single_file(filepath, output_dir, n_sigma, use_parallel=True):
             for channel_name in channels_to_process
         ]
         
-        # Use ThreadPoolExecutor for I/O-bound operations with GPU
-        # (GPU operations are better with threads due to CUDA context)
         with ThreadPoolExecutor(max_workers=min(len(channels_to_process), 3)) as executor:
             results = list(executor.map(process_channel, channel_data_list))
         
@@ -143,10 +137,10 @@ if __name__ == '__main__':
     # Setup command-line argument parsing
     parser = argparse.ArgumentParser(description="Full-Waveform Laser Decomposition based on the HAGA method (GPU-Optimized).")
     parser.add_argument('-i', '--input', 
-                       default='C:/Users/mehrd/OneDrive/Desktop/Mitacs/Models/Dataset/TurbidityImpact/C2--Water_2M_SandReflection_21mLturbid_3V3Amp39V8SiPM_18ns15.csv',
+                       default='../CSV path or file,
                        help="Input directory containing CSV files or path to a single CSV file.")
     parser.add_argument('-o', '--output', 
-                       default='C:/Users/mehrd/OneDrive/Desktop/Mitacs/Models/Dataset/TurbidityImpact/output/',
+                       default='../Output path',
                        help="Output directory to save result plots.")
     parser.add_argument('--n_sigma', type=float, default=2.0,
                        help="Sigma multiplier for noise threshold calculation. Default: 2.0")
@@ -191,3 +185,4 @@ if __name__ == '__main__':
 #
 # To force CPU usage:
 # python main.py --input ./input_data --output ./results --cpu
+
