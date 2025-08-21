@@ -1,6 +1,4 @@
-# data_loader.py
-# --- (FINAL ROBUST VERSION) ---
-# Added case-insensitive header detection to robustly handle any CSV format.
+
 
 import pandas as pd
 from io import StringIO
@@ -155,4 +153,5 @@ class WaveformLoader:
             print(f"  - Error loading {filepath}: {e}")
             import traceback
             traceback.print_exc()
+
             return None
