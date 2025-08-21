@@ -1,5 +1,4 @@
-# Utils/plotter.py
-# --- (FINAL VERSION WITH PEAK MARKERS) ---
+
 # Added logic to mark the detected peak of each Gaussian component with a red dot.
 
 import matplotlib.pyplot as plt
@@ -48,15 +47,13 @@ class Plotter:
                 for j, component in enumerate(data['final_components']):
                     ax.fill_between(data['x_data'], baseline_level, component, 
                                     alpha=0.4, label=f"Component {j+1}")
-                    
-                    # --- MODIFICATION: Add red markers for peaks ---
+                
                     # Find the index of the minimum value (the peak) for this component
                     peak_index = np.argmin(component)
                     peak_time = data['x_data'][peak_index]
                     peak_amplitude = component[peak_index]
                     # Add a red dot marker. The 'zorder' ensures it's drawn on top.
                     ax.plot(peak_time, peak_amplitude, 'ro', markersize=5, zorder=10)
-                    # --------------------------------------------------
             
             ax.axhline(y=data['noise_threshold'], color='g', linestyle=':', label='Noise Threshold')
             ax.set_title(f"Channel: {data['channel_name']}")
@@ -69,4 +66,5 @@ class Plotter:
         output_filename = os.path.join(output_dir, f"{base_filename}_decomposition.png")
         plt.savefig(output_filename)
         plt.close(fig)
+
         print(f"--- Plot saved to {os.path.join(output_dir, os.path.basename(output_filename))} ---")
