@@ -20,7 +20,7 @@ This project successfully implements the H-AGA methodology while introducing a c
 * **Scientifically Rigorous**: Adheres to the multi-stage optimization process (Preprocessing \-\> Peak Detection \-\> AGA \-\> LM) outlined in the H-AGA paper, resulting in a high goodness-of-fit (R2 0.96).  
 * **Fully GPU-Accelerated**: The entire optimization pipeline has been engineered to run on NVIDIA GPUs, reducing processing time for a single waveform from over 30 minutes to a matter of seconds.  
 * **Custom GPU-Native Genetic Algorithm**: A key innovation was the development of a custom, fully GPU-native Adaptive Genetic Algorithm (AGA) using PyTorch. This was created to solve a critical performance bottleneck identified with traditional CPU-bound GA libraries, eliminating the data transfer overhead between the CPU and GPU.  
-* **High-Precision Final Fit**: The final fitting stage uses a GPU-accelerated implementation of the Levenberg-Marquardt (LM) algorithm, as recommended by the paper, for fast and precise convergence.  
+* **High-Precision Final Fit**: The final fitting stage uses a GPU-accelerated implementation of the Levenberg-Marquardt (LM) algorithm for fast and precise convergence.  
 * **Robust Preprocessing**: Employs a state-of-the-art signal processing pipeline, including wavelet denoising and Asymmetric Least Squares (ALS) baseline correction, to handle real-world noisy data.
 
 ## **2\. The Scientific Methodology**
@@ -44,7 +44,7 @@ The AdaptiveGeneticOptimizer performs the first optimization pass. A genetic alg
 
 #### **Step 4: Levenberg-Marquardt (Local, High-Precision Fit)**
 
-The LMFitter performs the final optimization. The LM algorithm is a "local" optimizer. It is extremely fast and precise at finding the *best possible* solution, but it requires a good starting guess. By feeding it the result from the AGA, we combine the global search power of the genetic algorithm with the high-precision finishing power of Levenberg-Marquardt, as recommended by the H-AGA paper.
+The LMFitter performs the final optimization. The LM algorithm is a "local" optimizer. It is extremely fast and precise at finding the *best possible* solution, but it requires a good starting guess. By feeding it the result from the AGA, we combine the global search power of the genetic algorithm with the high-precision finishing power of Levenberg-Marquardt.
 
 ## **3\. Installation**
 
