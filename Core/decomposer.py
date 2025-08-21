@@ -1,7 +1,3 @@
-# Core/decomposer.py
-# --- (DEFINITIVELY FINAL VERSION) ---
-# Corrected the final NameError in `get_plotting_data` by using `self.y_processed`.
-# This allows the plot data to be generated correctly, enabling the final plot output.
 
 import numpy as np
 import torch
@@ -94,10 +90,10 @@ class WaveformDecomposer:
                 if self.is_inverted:
                     component_plot *= -1.0
                 
-                # --- THIS IS THE FINAL CORRECTION ---
+    
                 # Add the original baseline to position the component correctly for the final plot
                 final_components.append(component_plot + self.original_baseline)
-                # ------------------------------------
+       
 
         return {
             "x_data": self.x_data, "y_original": self.y_data, "final_fit": self.final_fit,
@@ -107,4 +103,5 @@ class WaveformDecomposer:
         }
         
     def get_final_params_as_list(self) -> list:
+
         return self.final_params.tolist() if self.final_params is not None else []
