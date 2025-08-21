@@ -1,5 +1,4 @@
-# utils.py
-# --- (MODIFIED) ---
+
 # The main fitting function now includes a 'baseline' and 'p' (shape) parameter for the generalized Gaussian.
 
 import numpy as np
@@ -37,4 +36,5 @@ class N_Gaussian:
         """Standard Gaussian (p=2 case of generalized Gaussian)"""
         if wid <= 1e-6:
             return np.zeros_like(x)
+
         return amp * np.exp(-((x - pos) ** 2) / (2 * wid ** 2))
