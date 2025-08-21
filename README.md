@@ -17,7 +17,7 @@ The primary scientific goal is to accurately detect and parameterize hidden or o
 
 This project successfully implements the H-AGA methodology while introducing a critical innovation for practical, high-throughput analysis:
 
-* **Scientifically Rigorous**: Adheres to the multi-stage optimization process (Preprocessing \-\> Peak Detection \-\> AGA \-\> LM) outlined in the H-AGA paper, resulting in a high goodness-of-fit (R2 0.96).  
+* **Scientifically Rigorous**: Adheres to the multi-stage optimization process (Preprocessing \-\> Peak Detection \-\> AGA \-\> LM) , resulting in a high goodness-of-fit (R2 0.96).  
 * **Fully GPU-Accelerated**: The entire optimization pipeline has been engineered to run on NVIDIA GPUs, reducing processing time for a single waveform from over 30 minutes to a matter of seconds.  
 * **Custom GPU-Native Genetic Algorithm**: A key innovation was the development of a custom, fully GPU-native Adaptive Genetic Algorithm (AGA) using PyTorch. This was created to solve a critical performance bottleneck identified with traditional CPU-bound GA libraries, eliminating the data transfer overhead between the CPU and GPU.  
 * **High-Precision Final Fit**: The final fitting stage uses a GPU-accelerated implementation of the Levenberg-Marquardt (LM) algorithm for fast and precise convergence.  
