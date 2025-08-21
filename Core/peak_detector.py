@@ -1,5 +1,4 @@
-# Core/peak_detector.py
-# --- (CORRECTED FOR ROBUSTNESS) ---
+
 # Tuned find_peaks parameters to be less sensitive to noise and find only major peaks.
 
 import numpy as np
@@ -19,7 +18,6 @@ class PeakDetector:
         return sigmas
 
     def run(self, y_data: np.ndarray) -> List[Dict]:
-        # --- MODIFICATION START: Making peak detection more robust ---
         
         # The peak height must be significantly above the noise.
         min_height = self.noise_threshold * 4.0
@@ -39,7 +37,6 @@ class PeakDetector:
             distance=min_distance,
             prominence=min_prominence
         )
-        # --- MODIFICATION END ---
 
         if len(peaks) == 0:
             print("  - No prominent peaks found with the new robust parameters.")
@@ -62,4 +59,5 @@ class PeakDetector:
         
         initial_params.sort(key=lambda p: p['t'])
         print(f"  - Total initial components detected: {len(initial_params)}")
+
         return initial_params
