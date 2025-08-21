@@ -1,4 +1,3 @@
-# waveform.py
 # Defines the Waveform class, a simple data structure to hold and provide
 # easy access to the time-series data from the CSV files.
 
@@ -50,4 +49,5 @@ class Waveform:
         """
         if channel_name not in self._df.columns:
             raise KeyError(f"Channel '{channel_name}' not found in waveform data")
+
         return self._df[channel_name].to_numpy(dtype=float)
