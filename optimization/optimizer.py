@@ -1,8 +1,4 @@
-# optimizer.py
 # Defines the base Optimizer class using abc (Abstract Base Class).
-# This establishes a contract that all optimizer subclasses must follow,
-# ensuring they have an 'optimize' method. This is a good use of
-# inheritance and polymorphism as requested.
 
 from abc import ABC, abstractmethod
 import numpy as np
@@ -33,4 +29,5 @@ class Optimizer(ABC):
         This method should run the specific optimization algorithm.
         """
         pass
+
 
