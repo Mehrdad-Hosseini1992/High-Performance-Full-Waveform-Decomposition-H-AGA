@@ -5,13 +5,13 @@ The primary scientific goal is to accurately detect and parameterize hidden or o
 
 ## **Table of Contents**
 
-1. [Key Features & Innovations]  
-2. [The Scientific Methodology]
-3. [Installation]
-4. [Usage]
-5. [Project Architecture (OOP)] 
-6. [A Note on the OMP Warning] 
-7. [Acknowledgments]
+1. Key Features & Innovations 
+2. The Scientific Methodology
+3. Installation
+4. Usage
+5. Project Architecture (OOP)
+6. A Note on the OMP Warning
+7. Acknowledgments
 
 ## **1\. Key Features & Innovations**
 
